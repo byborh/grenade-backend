@@ -1,10 +1,27 @@
 import type { Idea } from "../models/Idea.js";
+import { v4 as uuidv4 } from "uuid";
 
-let Ideas: Idea[] = [];
 
+let Ideas: Idea[] = [
+    {
+        id: uuidv4(),
+        text: "Construire une Batmobile volante",
+        votes: 5
+    },
+    {
+        id: uuidv4(),
+        text: "Ouvrir un orphelinat à Bordeaux",
+        votes: 2
+    },
+    {
+        id: uuidv4(),
+        text: "Organiser une mission",
+        votes: 0
+    }
+];
 export function createIdea(text: string): Idea {
     const newIdea: Idea = {
-        id: crypto.randomUUID(),
+        id: uuidv4(), 
         text,
         votes: 0
     }

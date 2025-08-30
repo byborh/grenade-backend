@@ -10,6 +10,7 @@ describe("Grenade - Ideas", () => {
     })
 
     it("getIdeas() should return a list of ideas", () => {
+        createIdea("Faire du Peer Programming");
         const ideas = getIdeas();
         expect(Array.isArray(ideas)).toBe(true);
         expect(ideas[0]).toHaveProperty("id");
