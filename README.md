@@ -1,13 +1,13 @@
 ---
 
-# ÌΩâ Grenade ‚Äì Le vote express - Backend
+# Grenade ‚Äì Le vote express - Backend
 
 **Grenade** est une application collaborative simple permettant aux membres d‚Äôune √©quipe de proposer des id√©es et de voter pour leurs pr√©f√©r√©es.
 Le backend est construit en **Node.js/TypeScript** avec une architecture **serverless** (AWS Lambda, DynamoDB, API Gateway) et expose une API **GraphQL**.
 
 ---
 
-## Ì∫Ä Fonctionnalit√©s
+## ÔøΩÔøΩÔøΩ Fonctionnalit√©s
 
 * **Proposer une id√©e** : cr√©er une id√©e avec un texte, votes = 0 par d√©faut.
 * **Lister toutes les id√©es** : r√©cup√©rer les id√©es existantes.
@@ -15,7 +15,7 @@ Le backend est construit en **Node.js/TypeScript** avec une architecture **serve
 
 ---
 
-## Ìª†Ô∏è Stack technique
+## Stack technique
 
 * **Backend** : Node.js, TypeScript
 * **API** : GraphQL (Apollo Server / GraphQL Yoga)
@@ -26,7 +26,7 @@ Le backend est construit en **Node.js/TypeScript** avec une architecture **serve
 
 ---
 
-## Ì≥Ç Structure du projet
+## Structure du projet
 
 ```
 backend/
@@ -43,7 +43,7 @@ backend/
 
 ---
 
-## Ì∑™ Tests (TDD)
+## Tests (TDD)
 
 Les tests sont √©crits en **Vitest** et ex√©cut√©s automatiquement via **GitHub Actions**.
 
@@ -62,7 +62,7 @@ Exemples de tests :
 
 ---
 
-## ‚ö° CI/CD
+## CI/CD
 
 Chaque **push sur `main`** d√©clenche une pipeline GitHub Actions :
 
@@ -72,7 +72,7 @@ Chaque **push sur `main`** d√©clenche une pipeline GitHub Actions :
 
 ---
 
-## Ì≥å Roadmap
+## Roadmap
 
 * [ ] TDD avec Vitest
 * [ ] CI GitHub Actions (tests)
@@ -82,7 +82,7 @@ Chaque **push sur `main`** d√©clenche une pipeline GitHub Actions :
 
 ---
 
-## Ì≥ú Licence
+## Licence
 
 Projet r√©alis√© dans le cadre d‚Äôun apprentissage fullstack et cloud.
 Libre d‚Äôutilisation et d‚Äôadaptation.
