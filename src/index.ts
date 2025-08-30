@@ -26,8 +26,8 @@ const resolvers = {
         getIdeas: () => getIdeas(),
     },
     Mutation: {
-        createIdea: (_: any, args: { text: string }) => createIdea(args.text),
-        voteIdea: (_: any, args: { id: string }) => voteIdea(args.id),
+      createIdea: (_: unknown, args: { text: string }) => createIdea(args.text),
+      voteIdea: (_: unknown, args: { id: string }) => voteIdea(args.id)      
     }
 };
 

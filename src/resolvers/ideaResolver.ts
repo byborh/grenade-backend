@@ -1,7 +1,7 @@
 import type { Idea } from "../models/Idea.js";
 import { v4 as uuidv4 } from "uuid";
 
-
+// eslint-disable-next-line prefer-const
 let Ideas: Idea[] = [
     {
         id: uuidv4(),

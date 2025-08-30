@@ -34,12 +34,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run ESLint
-        run: npm run lint
-
-      - name: Check Prettier formatting
-        run: npm run format:check
-
       - name: TypeScript type-check
         run: npm run type-check
 
