@@ -1,6 +1,5 @@
 import { ApolloServer } from "@apollo/server";
 import { createIdea, getIdeas, voteIdea } from "./resolvers/ideaResolver.js";
-import type { Idea } from "./models/Idea.js";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
 // Definition of schema GraphQL
