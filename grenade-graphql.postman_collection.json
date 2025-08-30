@@ -1,0 +1,80 @@
+{
+    "info": {
+      "name": "Grenade GraphQL API",
+      "_postman_id": "b1a7b1c8-3e2d-4e91-8d4a-graphql-grenade",
+      "description": "Collection Postman pour tester les requêtes GraphQL (Ideas API).",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get Ideas",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"query\": \"query { getIdeas { id text votes } }\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:4000/",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "4000",
+            "path": [""]
+          }
+        }
+      },
+      {
+        "name": "Create Idea",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"query\": \"mutation($text: String!) { createIdea(text: $text) { id text votes } }\",\n  \"variables\": {\n    \"text\": \"Construire la Batcave 2.0\"\n  }\n}"
+          },
+          "url": {
+            "raw": "http://localhost:4000/",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "4000",
+            "path": [""]
+          }
+        }
+      },
+      {
+        "name": "Vote Idea",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"query\": \"mutation($id: ID!) { voteIdea(id: $id) { id text votes } }\",\n  \"variables\": {\n    \"id\": \"REMPLACE_MOI_PAR_UN_ID\"\n  }\n}"
+          },
+          "url": {
+            "raw": "http://localhost:4000/",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "4000",
+            "path": [""]
+          }
+        }
+      }
+    ]
+  }
+  
