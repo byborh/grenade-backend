@@ -74,8 +74,8 @@ Chaque **push sur `main`** déclenche une pipeline GitHub Actions :
 
 ## Roadmap
 
-* [ ] TDD avec Vitest
-* [ ] CI GitHub Actions (tests)
+* [X] TDD avec Vitest
+* [X] CI GitHub Actions (tests)
 * [ ] Connexion réelle à DynamoDB
 * [ ] Déploiement sur AWS Lambda + API Gateway
 * [ ] Monitoring avec CloudWatch
