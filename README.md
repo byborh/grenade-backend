@@ -1,4 +1,3 @@
----
 
 # Grenade – Le vote express - Backend
 
@@ -7,7 +6,7 @@ Le backend est construit en **Node.js/TypeScript** avec une architecture **serve
 
 ---
 
-## ��� Fonctionnalités
+## Fonctionnalités
 
 * **Proposer une idée** : créer une idée avec un texte, votes = 0 par défaut.
 * **Lister toutes les idées** : récupérer les idées existantes.
@@ -78,7 +77,7 @@ Chaque **push sur `main`** déclenche une pipeline GitHub Actions :
 * [X] CI GitHub Actions (tests)
 * [X] Déploiement sur AWS Lambda + API Gateway
 * [X] Monitoring avec CloudWatch
-* [ ] Connexion réelle à DynamoDB
+* [X] Connexion réelle à DynamoDB
 
 ---
 
