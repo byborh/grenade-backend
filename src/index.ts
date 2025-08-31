@@ -38,5 +38,5 @@ const server = new ApolloServer({ typeDefs, resolvers });
 // Export handler for AWS Lambda
 export const handler = startServerAndCreateLambdaHandler(
   server,
-  handlers.createAPIGatewayProxyEventRequestHandler()
+  handlers.createAPIGatewayProxyEventV2RequestHandler()
 );
