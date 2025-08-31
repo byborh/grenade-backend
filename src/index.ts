@@ -1,6 +1,7 @@
-import { ApolloServer } from "@apollo/server";
-import { createIdea, getIdeas, voteIdea } from "./resolvers/ideaResolver.js";
-import { startStandaloneServer } from "@apollo/server/standalone";
+import type { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
+import { ApolloServer } from '@apollo/server';
+import { startServerAndCreateLambdaHandler, handlers } from '@as-integrations/aws-lambda';
+import { createIdea, getIdeas, voteIdea } from './resolvers/ideaResolver.js';
 
 // Definition of schema GraphQL
 const typeDefs = `
@@ -22,26 +23,20 @@ const typeDefs = `
 
 // Resolver GraphQL
 const resolvers = {
-    Query: {
-        getIdeas: () => getIdeas(),
-    },
-    Mutation: {
-      createIdea: (_: unknown, args: { text: string }) => createIdea(args.text),
-      voteIdea: (_: unknown, args: { id: string }) => voteIdea(args.id)      
-    }
+  Query: {
+    getIdeas: () => getIdeas(),
+  },
+  Mutation: {
+    createIdea: (_: unknown, args: { text: string }) => createIdea(args.text),
+    voteIdea: (_: unknown, args: { id: string }) => voteIdea(args.id)      
+  }
 };
 
-// Creation of server Appolo
-const server = new ApolloServer({
-    typeDefs,
-    resolvers
-})
+// Creation of server Apollo
+const server = new ApolloServer({ typeDefs, resolvers });
 
-
-// Start server standalone
-const { url } = await startStandaloneServer(server, {
-    listen: { port: 4000 }
-});
-
-
-console.log(`🚀 Server ready at ${url}`);
+// Export handler for AWS Lambda
+export const handler = startServerAndCreateLambdaHandler(
+  server,
+  handlers.createAPIGatewayProxyEventRequestHandler()
+);
