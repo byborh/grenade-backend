@@ -51,10 +51,18 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --production
 
-      - name: Zip files
-        run: zip -r lambda.zip . -x "*.git*"
+      - name: Build
+        run: npx tsc
+
+      - name: Prepare Lambda package
+        run: |
+          mkdir package
+          cp -r dist package/
+          cp -r node_modules package/
+          cp package.json package/
+          cd package && zip -r ../lambda.zip .
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
