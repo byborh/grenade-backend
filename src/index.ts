@@ -24,11 +24,11 @@ const typeDefs = `
 // Resolver GraphQL
 const resolvers = {
   Query: {
-    getIdeas: () => getIdeas(),
+    getIdeas: async () => getIdeas(),
   },
   Mutation: {
-    createIdea: (_: unknown, args: { text: string }) => createIdea(args.text),
-    voteIdea: (_: unknown, args: { id: string }) => voteIdea(args.id)      
+    createIdea: async (_: unknown, args: { text: string }) => createIdea(args.text),
+    voteIdea: async (_: unknown, args: { id: string }) => voteIdea(args.id)      
   }
 };
 

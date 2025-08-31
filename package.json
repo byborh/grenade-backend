@@ -20,12 +20,14 @@
   "dependencies": {
     "@apollo/server": "^4.12.2",
     "@as-integrations/aws-lambda": "^3.1.0",
+    "@aws-sdk/client-dynamodb": "^3.879.0",
     "graphql": "^16.11.0",
     "uuid": "^11.1.0"
   },
   "scripts": {
     "dev": "nodemon --exec node --loader ts-node/esm src/index.ts",
-    "test": "vitest",
+    "test": "vitest run --dir tests/unit",
+    "test:integration": "vitest run --dir tests/integration",
     "type-check": "tsc --noEmit"
   }
 }
