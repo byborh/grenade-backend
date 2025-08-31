@@ -51,7 +51,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install --production
+        run: npm install --production=false
 
       - name: Build
         run: npx tsc
