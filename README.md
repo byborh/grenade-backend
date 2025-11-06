@@ -1,41 +1,40 @@
+# Grenade – Quick Vote - Backend
 
-# Grenade – Le vote express - Backend
-
-**Grenade** est une application collaborative simple permettant aux membres d’une équipe de proposer des idées et de voter pour leurs préférées.
-Le backend est construit en **Node.js/TypeScript** avec une architecture **serverless** (AWS Lambda, DynamoDB, API Gateway) et expose une API **GraphQL**.
-
----
-
-## Fonctionnalités
-
-* **Proposer une idée** : créer une idée avec un texte, votes = 0 par défaut.
-* **Lister toutes les idées** : récupérer les idées existantes.
-* **Voter pour une idée** : incrémenter le nombre de votes d’une idée.
+**Grenade** is a simple collaborative application that allows team members to propose ideas and vote for their favorites.
+The backend is built with **Node.js/TypeScript** using a **serverless architecture** (AWS Lambda, DynamoDB, API Gateway) and exposes a **GraphQL API**.
 
 ---
 
-## Stack technique
+## Features
 
-* **Backend** : Node.js, TypeScript
-* **API** : GraphQL (Apollo Server / GraphQL Yoga)
-* **BDD** : DynamoDB (AWS)
-* **Déploiement** : AWS Lambda + API Gateway
-* **CI/CD** : GitHub Actions
-* **Tests unitaires (TDD)** : Vitest
+* **Propose an idea** – Create a new idea with text; votes start at 0 by default.
+* **List all ideas** – Retrieve existing ideas.
+* **Vote for an idea** – Increment the vote count for a specific idea.
 
 ---
 
-## Structure du projet
+## Tech Stack
+
+* **Backend**: Node.js, TypeScript
+* **API**: GraphQL (Apollo Server / GraphQL Yoga)
+* **Database**: DynamoDB (AWS)
+* **Deployment**: AWS Lambda + API Gateway
+* **CI/CD**: GitHub Actions
+* **Unit Testing (TDD)**: Vitest
+
+---
+
+## Project Structure
 
 ```
 backend/
  ├─ src/
- │   ├─ models/Idea.ts          # Modèle Idea
- │   ├─ resolvers/ideaResolver.ts # Logique métier (CRUD idées)
- │   └─ index.ts                # Entrée principale (GraphQL server)
+ │   ├─ models/Idea.ts             # Idea model
+ │   ├─ resolvers/ideaResolver.ts  # Business logic (CRUD for ideas)
+ │   └─ index.ts                   # Main entry point (GraphQL server)
  ├─ tests/
- │   └─ idea.test.ts            # Tests unitaires
- ├─ .github/workflows/ci.yml    # CI GitHub Actions
+ │   └─ idea.test.ts               # Unit tests
+ ├─ .github/workflows/ci.yml       # GitHub Actions CI pipeline
  ├─ package.json
  └─ tsconfig.json
 ```
@@ -44,44 +43,44 @@ backend/
 
 ## Tests (TDD)
 
-Les tests sont écrits en **Vitest** et exécutés automatiquement via **GitHub Actions**.
+Tests are written with **Vitest** and run automatically via **GitHub Actions**.
 
-Lancer les tests en local :
+Run tests locally:
 
 ```bash
 npm install
 npm test
 ```
 
-Exemples de tests :
+Example test cases:
 
-* `createIdea()` → l’idée a bien un `id`, `text`, `votes=0`.
-* `getIdeas()` → retourne une liste d’idées avec typage correct.
-* `voteIdea()` → incrémente le compteur de votes.
+* `createIdea()` → ensures an idea has an `id`, `text`, and `votes = 0`.
+* `getIdeas()` → returns a correctly typed list of ideas.
+* `voteIdea()` → increments the vote counter.
 
 ---
 
 ## CI/CD
 
-Chaque **push sur `main`** déclenche une pipeline GitHub Actions :
+Each **push to `main`** triggers a GitHub Actions pipeline:
 
-1. Installation des dépendances
-2. Lancement des tests unitaires
-3. Déploiement automatique sur AWS Lambda
+1. Install dependencies
+2. Run unit tests
+3. Automatically deploy to AWS Lambda
 
 ---
 
 ## Roadmap
 
-* [X] TDD avec Vitest
-* [X] CI GitHub Actions (tests)
-* [X] Déploiement sur AWS Lambda + API Gateway
-* [X] Monitoring avec CloudWatch
-* [X] Connexion réelle à DynamoDB
+* [x] TDD with Vitest
+* [x] CI setup with GitHub Actions (tests)
+* [x] Deployment to AWS Lambda + API Gateway
+* [x] Monitoring with CloudWatch
+* [x] Connection to real DynamoDB instance
 
 ---
 
-## Licence
+## License
 
-Projet réalisé dans le cadre d’un apprentissage fullstack et cloud.
-Libre d’utilisation et d’adaptation.
+This project was created as part of a fullstack and cloud learning journey.
+Free to use and adapt.
